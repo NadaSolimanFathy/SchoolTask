@@ -1,0 +1,87 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+body {
+  font-size: 10px;
+  display: grid;
+  grid-template-rows: [header-start]90vh[header-end main-start] 1fr[main-end footer-start] 30vw[footer-end];
+  grid-template-columns: repeat(10, 10vw);
+  header {
+    // border: 1px solid red;
+    grid-row: header-start/header-end;
+    grid-column: 1/11;
+    .headerElement__navContainer {
+      @include dispFlex(row);
+      &--enroll {
+        flex-wrap: wrap;
+      }
+      &--up {
+        @media screen and(max-width:1000px) {
+          @include dispFlex(column);
+        }
+      }
+      &--down {
+        @media screen and(max-width:1000px) {
+          @include dispFlex(column);
+        }
+      }
+    }
+  }
+
+  main {
+    grid-row: main-start/main-end;
+    grid-column: 1/11;
+
+    display: grid;
+    // grid-template-columns: ;
+    grid-template-rows: 70vw 50vw 50vw 35vw 55vw 50vw;
+    .container__flex {
+      @include dispFlex(row);
+      justify-content: space-around;
+    }
+    .container__text {
+      @include dispFlex(column);
+      align-items: center;
+    }
+    .container__grid {
+      display: grid;
+      grid-template-columns: 30% 30% 30%;
+      grid-template-rows: 50% 50%;
+      grid-column-gap: 5%;
+    }
+
+    .counter,
+    .btnSet {
+      @include dispFlex(row);
+    }
+    .whyUs--withOurKids {
+      @extend %dispGrid;
+
+      .kidsImg {
+        grid-column: 1/2;
+      }
+      .aboutKids {
+        grid-column: 2/4;
+      }
+    }
+  }
+  footer {
+    grid-row: footer-start/footer-end;
+    grid-column: 1/11;
+  }
+}
+@media only screen and(max-width:1000px) {
+  body {
+    grid-template-rows: [header-start]75vh[header-end main-start] 1fr[main-end footer-start] 30vw[footer-end];
+  }
+}
+@media only screen and(max-width:800px) {
+  body {
+    grid-template-rows: [header-start]60vh[header-end main-start] 1fr[main-end footer-start] 30vw[footer-end];
+  }
+}

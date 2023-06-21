@@ -1,0 +1,295 @@
+header {
+  //height : 95vh
+  background-image://color spots R,G,B,Obasity
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)),
+    url(../../imgs/xhero_bg.jpg.pagespeed.ic.J2JpiIDF0w.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  .material-symbols-outlined {
+    font-size: 1rem;
+    padding-right: 4px;
+  }
+  a {
+    text-decoration: none;
+    color: white;
+  }
+
+  .headerElement {
+    color: white;
+    text-transform: capitalize;
+    &__top {
+      // background-color: antiquewhite;
+      @include dispFlex(row);
+
+      .navContainer {
+        margin-top: 1.5%;
+        font-size: 1rem;
+        list-style-type: none;
+        @include dispFlex(row);
+        &__left {
+          width: 48%;
+          // background-color: aqua;
+        }
+        &__right {
+          width: 10rem;
+        }
+        &__main-nav {
+          width: 45%;
+          // background-color: aqua;
+        }
+      }
+
+      &--up {
+        width: 75%;
+        // background-color: aquamarine;
+        position: relative;
+        left: 10.5%;
+      }
+
+      @media only screen and (max-width: 1250px) {
+        &--down {
+          .navContainer__main-nav {
+            width: 50%;
+          }
+        }
+      }
+      @media only screen and (max-width: 1050px) {
+        &--up {
+          .navContainer__left,
+          .navContainer__right {
+            @include dispFlex(column);
+            // background-color: rgb(189, 189, 70);
+          }
+          .navContainer__left {
+            width: 89%;
+          }
+        }
+      }
+
+      &--down {
+        width: 75%;
+        position: relative;
+        left: 10.5%;
+        // background-color: blue;
+        .dropDown-container {
+          position: relative;
+          .dropDown-content {
+            position: absolute;
+            display: none;
+          }
+        }
+        .dropDown-container:hover .dropDown-content {
+          position: absolute;
+          display: block;
+        }
+        .btn {
+          @include Button($myGreen, white, none);
+          margin-right: 3%;
+        }
+
+        .title {
+          font-size: 1.7rem;
+          span {
+            color: $myGreen;
+          }
+        }
+      }
+
+      @media only screen and (max-width: 1050px) {
+        &--down {
+          .navContainer__main-nav {
+            width: 30%;
+            @include dispFlex(column);
+            // flex: gap 0;
+            align-items: flex-end;
+            // background-color: yellow;
+            .dropDown-container {
+              order: 7;
+              .dropDown-content {
+                // background-color: blueviolet;
+                text-align: right;
+              }
+            }
+          }
+          .btn {
+            margin-right: 10%;
+          }
+        }
+      }
+      @media only screen and(max-width:750px) {
+        .btn {
+          margin-left: 7%;
+          margin-right: 7%; //???
+
+          width: fit-content;
+        }
+      }
+      @media only screen and(max-width:600px) {
+        .navContainer__main-nav {
+          //    background-color: aqua;
+          margin-left: 15%;
+          .dropDown-content {
+            // background-color: blueviolet;
+            text-align: right;
+          }
+        }
+      }
+    }
+    @media only screen and(max-width:820px) {
+      &__top {
+        // background-color: antiquewhite;
+        @include dispFlex(column);
+        &--down {
+          .btn {
+            order: 1;
+          }
+          .title {
+            order: 2;
+          }
+          .navContainer__main-nav {
+            order: 3;
+            width: 100%;
+          }
+        }
+      }
+    }
+    &__bottom {
+      position: relative;
+      left: 10.5%;
+      top: 15%;
+      // background-color: black;
+      @include dispFlex(column);
+      height: 45%;
+      width: 50%;
+      h2 {
+        font-size: 3rem;
+      }
+      p {
+        font-size: 1.2rem;
+        @extend %beautyParagraph;
+        span {
+          padding-bottom: 0.1rem;
+          border-bottom: 0.2rem solid $myGreen;
+        }
+      }
+      button {
+        @include Button($myGreen, white, none);
+      }
+    }
+
+    @media only screen and(max-width:1050px) {
+      &__bottom {
+        // background-color: aqua;
+        left: 10.5%;
+        // top: .5rem;
+        height: 40%;
+        h2 {
+          font-size: 2.5rem;
+        }
+        p {
+          font-size: 1rem;
+        }
+      }
+    }
+    @media only screen and(max-width:940px) {
+      &__bottom {
+        // background-color: rgb(85, 131, 131);
+        left: 10.5%;
+        height: 35%;
+        h2 {
+          font-size: 2rem;
+        }
+        p {
+          font-size: 1rem;
+        }
+      }
+    }
+    @media only screen and(max-width:890px) {
+      &__bottom {
+        // background-color: rgb(90, 85, 131);
+        left: 10.5%;
+        height: 30%;
+        h2 {
+          font-size: 1.5rem;
+        }
+        p {
+          font-size: 0.8rem;
+        }
+      }
+    }
+    @media only screen and(max-width:820px) {
+      &__bottom {
+        // background-color: rgb(219, 238, 81);
+        left: 10.5%;
+        top: -10%;
+        width: 60%;
+        h2 {
+          font-size: 1.2rem;
+        }
+        p {
+          font-size: 0.8rem;
+        }
+      }
+    }
+    @media only screen and(max-width:720px) {
+      &__bottom {
+        height: 30%;
+        width: 65%;
+      }
+    }
+    @media only screen and(max-width:520px) {
+      &__bottom {
+        height: 35%;
+        width: 75%;
+      }
+    }
+    @media only screen and(max-width:450px) {
+      &__bottom {
+        width: 65%;
+        top: -20%;
+        h2 {
+          font-size: 1rem;
+        }
+        p {
+          font-size: 0.7rem;
+        }
+      }
+    }
+    @media only screen and(max-width:420px) {
+      &__bottom {
+        width: 60%;
+        top: -25%;
+      }
+    }
+    @media only screen and(max-width:300px) {
+      &__bottom {
+        width: 55%;
+        top: -30%;
+      }
+    }
+
+    &__playVid {
+      position: absolute;
+      top: 18.5vw;
+      left: 65vw;
+      @include circle(6rem, transparent, $myGreen);
+      .videoCircle {
+        @include circle(5rem, $myGreen, none);
+        position: absolute;
+        top: 0.5rem;
+        left: 0.5rem;
+        .tri-angle {
+          height: 2rem;
+          width: 2rem;
+          clip-path: polygon(85% 52%, 0 0, 0 100%);
+          background-color: white;
+          position: absolute;
+          top: 1.5rem;
+          left: 2rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,125 @@
+
+@mixin dispFlex($dir) {
+    display: flex;
+    flex-direction: $dir;
+    
+        justify-content: space-between;
+        align-items:baseline;
+    
+}
+%redOrangeSpan{
+    
+        padding-bottom: .3rem;
+        border-bottom: .2rem solid orangered;
+    
+}
+%beautyParagraph{
+line-height: 160%;
+
+}
+@mixin circle($height-wid,$bgColor,$border) {
+    height: $height-wid;
+    width: $height-wid;
+    background-color: $bgColor;
+    border: 1px solid #{$border};
+    border-top-left-radius:50% ;
+    border-top-right-radius:50% ;
+    border-bottom-left-radius:50% ;
+    border-bottom-right-radius:50% ;
+
+} 
+%stampa{
+
+    .hero {
+        position: relative;
+        top: 2vw;
+        left: 2vw;
+        height: 5.5vw;
+        width: 5.5vw;
+
+        img {
+            @include circle(100%, transparent, none)
+        }
+    }
+
+    .branch {
+        color: white;
+        font-size: 1.5vw;
+        margin: 2.5vw 0 0 1.8vw;
+        text-transform: capitalize;
+        font-family: $mainFont;
+    }
+
+    .description {
+        color: white;
+        font-size: 1vw;
+        margin: 1vw 0 0 1.8vw;
+        text-transform: capitalize;
+        font-family: $mainFont;
+        line-height: 160%;
+        padding-bottom:10%;
+    }
+}
+
+@mixin Button($bgColor,$color,$border){
+    background-color: $bgColor;
+    color: $color;
+    border-radius: 25px;
+    padding: .6vw 1.2vw ;
+    border:$border ;
+
+}
+%dispGrid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+%cuteTemplate{
+    border: 1px solid lightgray;
+    width: 30%;
+    text-align: center;
+    .cuteImg{
+        margin: auto;
+        margin-top: 2vw;
+
+        height: 7vw;
+        width: 5vw;
+        @include circle(5vw, rgb(199, 247, 249), none);
+        // background-color: aquamarine;
+        img{
+            position: relative;
+            left: -.5vw;
+            height: 130%;
+            width: 70%;
+        }
+
+    }
+    h4{
+        padding-top: 2vw;
+
+        color: black;
+        font-family: $mainFont;
+        font-size: 2vw;
+    }
+    p{
+        font-size: 1vw;
+        padding: 2vw;
+    }
+    .price{
+        font-size: 2vw;
+        span{
+            font-size: 1vw;
+
+        }
+
+    }
+    button{
+        @include Button($myGreen,white,none);
+        height: 3vw;
+        width: 10vw;
+        font-size: 1vw;
+        text-transform: capitalize;
+        font-weight: bold;
+        margin-bottom: 2vw;
+    }
+
+}

@@ -1,0 +1,452 @@
+main {
+  .mainElement {
+    &__part1 {
+      width: 80%;
+      position: relative;
+      left: 10%;
+      top: -2rem;
+      @include dispFlex(column);
+      align-items: center;
+      .container {
+        .flex-item {
+          @include dispFlex(column);
+          @extend %stampa;
+
+          &--green {
+            background-color: rgb(139, 202, 44);
+          }
+          &--orange {
+            background-color: rgb(228, 128, 6);
+            margin-left: 3.5rem;
+            margin-right: 3.5rem;
+          }
+
+          &--blue {
+            background-color: rgb(99, 184, 236);
+          }
+        }
+        &__grid {
+          .subjectContainer {
+            .branch {
+              color: black;
+            }
+            .description {
+              color: black;
+            }
+          }
+        }
+        &__text {
+          width: 45%;
+          .offer {
+            font-size: 2.5vw;
+            font-family: $mainFont;
+            text-transform: capitalize;
+            color: $myGreen;
+            span {
+              padding-bottom: 0.5vw;
+              border-bottom: 0.3vw solid orangered;
+            }
+          }
+
+          .description {
+            padding-top: 2vw;
+            font-size: 1vw;
+            text-align: center;
+          }
+        }
+      }
+    }
+
+    &__part2 {
+      background-image: //color spots R,G,B,Obasity
+        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)),
+        url(../../imgs/bgKids.webp); // background-position: center;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      @include dispFlex(column);
+      align-items: center;
+      justify-content: center;
+
+      .content {
+        height: 28%;
+        width: 45%;
+        // border: 2px solid black;
+        text-align: center;
+        color: white;
+        .content-title {
+          font-size: 2.5vw;
+          text-transform: capitalize;
+          font-family: $mainFont;
+        }
+        .content-text {
+          padding-top: 2vw;
+          font-size: 1.5vw;
+          font-weight: lighter;
+          padding-bottom: 2vw;
+        }
+        .content-btn {
+          @include Button($myGreen, white, none);
+          font-size: 1.2vw;
+          text-transform: capitalize;
+        }
+      }
+    }
+    @media only screen and (max-width: 700px) {
+      &__part2 {
+        .content {
+          height: 33%;
+          width: 55%;
+
+          .content-title {
+            font-size: 3vw;
+          }
+
+          .content-text {
+            font-size: 2vw;
+          }
+        }
+      }
+    }
+
+    &__part3 {
+      // border: 1px solid blueviolet;
+      position: relative;
+
+      .aboutUs {
+        &--flex-container {
+          @include dispFlex(column);
+          position: relative;
+          top: 20%;
+          left: 10%;
+          height: 60%;
+          width: 35%;
+          // background-color: #c8e9e5;
+        }
+        &--Title {
+          font-family: $mainFont;
+          color: $myGreen;
+          font-size: 2.5vw;
+          text-transform: capitalize;
+          span {
+            padding-bottom: 0.3vw;
+            border-bottom: 0.2vw solid orangered;
+          }
+        }
+        &--Text,
+        &--List,
+        &--counter {
+          font-size: 1vw;
+          width: 78%;
+        }
+        &--List {
+          list-style-type: none;
+          span {
+            color: $myGreen;
+            font-size: 1.5vw;
+          }
+        }
+        &--counter {
+          // background-color: aquamarine;
+          @include dispFlex(row);
+          font-size: 1.5vw;
+          span {
+            font-size: 2vw;
+            color: $myGreen;
+          }
+        }
+        // border: 1px solid blueviolet;
+        &--btnSet {
+          width: 60%;
+          @include dispFlex(row);
+          .green,
+          .white {
+            @include Button($myGreen, white, none);
+            width: 10vw;
+            height: 3vw;
+            text-transform: uppercase;
+            font-size: 1.1vw;
+          }
+          .white {
+            background-color: white;
+            color: $myGreen;
+            border: 1px solid $myGreen;
+          }
+        }
+        &--coloredSquare {
+          height: 50%;
+          width: 35%;
+          background-color: #c8e9e5;
+          position: absolute;
+          top: 10%;
+          right: 0;
+        }
+        &--imgContainer {
+          height: 35vw;
+          width: 34vw;
+          position: absolute;
+          top: 18%;
+          right: 10%;
+          img {
+            height: 100%;
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    &__part4 {
+      // border: 2px solid orange;
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      background-color: rgb(249, 248, 248);
+
+      .schoolNews {
+        padding-top: 10%;
+        // border: 2px solid orange;
+
+        grid-row: 1/2;
+        grid-column: 4/8;
+        text-align: center;
+
+        h4 {
+          font-size: 2.5vw;
+          color: $myGreen;
+          text-transform: capitalize;
+          font-family: $mainFont;
+
+          span {
+            padding-bottom: 0.2vw;
+            border-bottom: 0.2vw solid orangered;
+          }
+        }
+
+        .schoolNewsText {
+          padding-top: 2vw;
+          font-size: 1vw;
+        }
+      }
+
+      .specialOffers {
+        margin-bottom: 5%;
+        @include dispFlex(row);
+        // border: 1px solid rgb(119, 255, 0);
+        grid-row: 2/3;
+        grid-column: 2/10;
+
+        .theOffer {
+          -webkit-box-shadow: 0 0 10px lightgrey;
+          box-shadow: 0 0 10px lightgrey; //نقلاها
+          width: 49%;
+          @extend %dispGrid;
+          height: 100%;
+
+          .imgBag {
+            grid-column: 1/2;
+            img {
+              height: 100%;
+              width: 100%;
+            }
+          }
+          .article {
+            grid-column: 2/4;
+            margin-left: 2vw;
+            h4 {
+              padding-top: 1.5vw;
+              font-size: 1.5vw;
+              color: $myGreen;
+              text-transform: capitalize;
+              font-family: $mainFont;
+            }
+            .date {
+              padding-top: 1.5vw;
+              color: lightgrey;
+              font-size: 1vw;
+              span {
+                font-size: 1.1vw;
+              }
+            }
+            .text {
+              padding-top: 0.5vw;
+              font-size: 1vw;
+            }
+          }
+        }
+      }
+    }
+
+    &__part5 {
+      // border: 2px solid orange;
+
+      .pricing {
+        // border: 2px solid orange;
+
+        width: 40%;
+        text-align: center;
+        position: relative;
+        top: 10%;
+        left: 30%;
+        h4 {
+          font-size: 2.5vw;
+          color: $myGreen;
+          text-transform: capitalize;
+          font-family: $mainFont;
+          span {
+            padding-bottom: 0.2vw;
+            border-bottom: 0.2vw solid orangered;
+          }
+        }
+        .pricingDetails {
+          padding-top: 2vw;
+          font-size: 1vw;
+        }
+      }
+      .cuteTemps {
+        @include dispFlex(row);
+        width: 70%;
+        // border: .2vw solid orangered;
+        position: relative;
+        top: 10vw;
+        left: 15%;
+
+        .cuteTemp {
+          @extend %cuteTemplate;
+          .cuteImg {
+            .boy {
+              width: 100%;
+            }
+          }
+          .whiteBtn {
+            background-color: white;
+            border: 1px solid $myGreen;
+            color: $myGreen;
+          }
+        }
+      }
+    }
+    &__part6 {
+      // border: 1px solid rgb(0, 255, 55);
+      position: relative;
+      h4 {
+        margin-left: 2vw;
+        font-size: 2vw;
+        text-transform: capitalize;
+        color: $myGreen;
+        font-family: $mainFont;
+
+        span {
+          padding-bottom: 0.3vw;
+          border-bottom: 0.2vw solid orangered;
+        }
+      }
+
+      .pinkSqure {
+        height: 20vw;
+        width: 20vw;
+        background-color: #faf2f3;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+      }
+
+      .james {
+        // border: 1px solid red;
+        width: 30%;
+        height: 80%;
+        position: relative;
+        top: 10%;
+        left: 12.2%;
+        z-index: 1;
+
+        .jamesInfo {
+          padding-left: 2vw;
+          padding-bottom: 2vw;
+
+          &--story {
+            font-size: 1.5vw;
+            line-height: 160%;
+          }
+          &--jamesImg {
+            width: 8vw;
+            height: 8vw;
+            img {
+              @include circle(100%, pink, none);
+            }
+          }
+          &--aboutJames {
+            font-size: 1.3vw;
+            span {
+              color: $myGreen;
+              font-size: 2vw;
+              text-transform: capitalize;
+            }
+          }
+        }
+      }
+      .whyChooseUs {
+        // border: 3px solid rgb(142, 25, 25);
+
+        width: 40%;
+        height: 80%;
+        position: relative;
+        top: -70%;
+        left: 50%;
+        .whyUs {
+          &--ourText {
+            padding-top: 6%;
+            font-size: 1vw;
+            padding-left: 2vw;
+          }
+          &--ourStaff {
+            background-color: $myGreen;
+            font-size: 1vw;
+            margin-left: 2vw;
+            margin-top: 1.5vw;
+
+            padding: 0.5vw;
+            color: white;
+            text-transform: capitalize;
+            span {
+              font-weight: bolder;
+              font-size: 2vw;
+            }
+          }
+          &--withOurKids {
+            margin: auto;
+            margin-top: 2vw;
+            height: 30%;
+            width: 90%;
+            .kidsImg {
+              img {
+                height: 100%;
+                width: 100%;
+              }
+            }
+            .aboutKids {
+              padding-left: 1.5vw;
+              font-size: 1vw;
+              p {
+                padding-bottom: 1.2vw;
+              }
+            }
+          }
+          &--additionalFeatures {
+            p {
+              span {
+                font-size: 1.5vw;
+                padding-right: 0.5vw;
+              }
+              padding-left: 2vw;
+              font-weight: bold;
+              font-family: $mainFont;
+              font-size: 1vw;
+              padding-top: 1vw;
+              text-transform: uppercase;
+            }
+          }
+        }
+      }
+    }
+  }
+}
